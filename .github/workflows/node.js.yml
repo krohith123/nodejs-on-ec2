@@ -35,9 +35,8 @@ jobs:
         key: ${{secrets.EC2_SSH_KEY}}
         host: ${{secrets.EC2_IP}}
         username: ${{secrets.EC2_USER}}
-        script:
 #           pm2 delete all
-          - run: cd /root/nodejs-on-ec2
-          - run: git pull
-          - run: npm install
+    - run: cd /root/nodejs-on-ec2
+    - run: git pull
+    - run: npm install
 #           pm2 start npm -- start
