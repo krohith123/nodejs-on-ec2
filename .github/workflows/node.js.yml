@@ -30,7 +30,7 @@ jobs:
     - run: npm run build --if-present
 #     - run: npm test:staging
     - name: SSH Remote Commands
-      uses: appleboy/ssh-action@v0.1.6
+      uses: ubuntu/ssh-action@v0.1.6
       with:
         key: ${{secrets.EC2_SSH_KEY}}
         host: ${{secrets.EC2_IP}}
