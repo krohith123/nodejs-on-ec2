@@ -40,3 +40,4 @@ jobs:
     - run: git pull
     - run: npm install
 #           pm2 start npm -- start
+#       open
