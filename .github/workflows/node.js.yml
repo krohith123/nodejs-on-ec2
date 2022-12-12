@@ -36,8 +36,8 @@ jobs:
         host: ${{secrets.EC2_IP}}
         username: ${{secrets.EC2_USER}}
         script:
-          pm2 delete all
+#           pm2 delete all
           cd /root/nodejs-on-ec2
           git pull
           npm install
-          pm2 stsrt npm -- start
+#           pm2 stsrt npm -- start
