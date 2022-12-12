@@ -38,7 +38,6 @@ jobs:
 #           pm2 delete all
     - run: sudo su -
     - run: cd /root/nodejs-on-ec2/
-    - run: cd /.ssh/id_rsa
     - run: git pull
     - run: npm install
 #           pm2 start npm -- start
