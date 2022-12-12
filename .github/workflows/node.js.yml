@@ -37,7 +37,7 @@ jobs:
         username: ${{secrets.EC2_USER}}
 #           pm2 delete all
     - run: sudo su -
-    - run: cd /root/nodejs-on-ec2/
+    - run: cd nodejs-on-ec2/
     - run: git pull
     - run: npm install
 #           pm2 start npm -- start
