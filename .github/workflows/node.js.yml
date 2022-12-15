@@ -37,7 +37,7 @@ jobs:
         username: ${{secrets.EC2_USER}}
 #           pm2 delete all
     - run: sudo su -
-    - run: git clone  https://github.com/krohith123/nodejs-on-ec2.git
+#    - run: git clone  https://github.com/krohith123/nodejs-on-ec2.git
 #    - run: cd /nodejs-on-ec2/
     - run: git pull
     - run: npm install
