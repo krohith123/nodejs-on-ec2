@@ -40,4 +40,4 @@ jobs:
     - run: cd /root/nodejs-on-ec2/
     - run: git pull
     - run: npm install
- #          pm2 start npm -- start
+ #          pm2 start npm -- start.
