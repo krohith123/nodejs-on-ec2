@@ -32,7 +32,7 @@ jobs:
         key: ${{secrets.EC2_SSH_KEY}}
         host: ${{secrets.EC2_IP}}
         username: ${{secrets.EC2_USER}}
-          pm2 delete all
+#         pm2 delete all
     - run: sudo su -
 #    - run: git clone  https://github.com/krohith123/nodejs-on-ec2.git
 #    - run: cd /nodejs-on-ec2/
