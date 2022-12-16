@@ -40,5 +40,5 @@ jobs:
     - run: git pull
     - run: npm install
     - run: npm update
-    - run: node app.js
+    - run: npm start
 #          pm2 start npm -- start
