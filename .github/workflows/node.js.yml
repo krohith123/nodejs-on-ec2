@@ -43,4 +43,6 @@ jobs:
 #    - run: npm run
 #    - run: npm install pm2 -g
 #    - run: npm start
-    - run: pm2 start npm -- start
+#    - run: pm2 start npm -- start
+    - run: pm2 start nodejs-on-ec2/index.js --name=king
+    
