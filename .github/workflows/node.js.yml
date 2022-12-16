@@ -36,8 +36,8 @@ jobs:
 #         pm2 delete all
     - run: sudo su -
 #    - run: git clone  https://github.com/krohith123/nodejs-on-ec2.git
-#    - run: cd /nodejs-on-ec2/
+    - run: cd /nodejs-on-ec2/
     - run: git pull
     - run: npm install
-    - run: sudo npm start
-#          pm2 start npm -- start.
+    - run: npm start
+#          pm2 start npm -- start
