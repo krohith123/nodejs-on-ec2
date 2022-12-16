@@ -37,13 +37,14 @@ jobs:
     - run: sudo su -
 #    - run: git clone  https://github.com/krohith123/nodejs-on-ec2.git
 #    - run: cd /nodejs-on-ec2/
-    - run: git pull
+#    - run: git pull
     - run: npm install
     - run: npm update
     - run: sudo npm install pm2 -g
 #    - run: npm run
 #    - run: npm install pm2 -g
 #    - run: npm start
-#    - run: pm2 start npm -- start
-    - run: pm2 start index.js --name=king
+    - run: git pull
+    - run: pm2 start npm -- start
+#    - run: pm2 start index.js --name=king
     
