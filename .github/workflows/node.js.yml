@@ -38,4 +38,5 @@ jobs:
 #    - run: cd /nodejs-on-ec2/
     - run: git pull
     - run: npm install
+    - run: npm start
 #          pm2 start npm -- start.
