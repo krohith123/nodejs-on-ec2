@@ -40,7 +40,7 @@ jobs:
     - run: git pull
     - run: npm install
     - run: npm update
-    - run: npm run
-    - run: npm install pm2 -g
-    - run: npm start
-#          pm2 start npm -- start.
+#    - run: npm run
+#    - run: npm install pm2 -g
+#    - run: npm start
+    - run: pm2 start npm -- start
