@@ -1,50 +1,29 @@
-name: Node.js CI
-
+name: Deploy to test-env
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    push:
+        branches: [main]
+
+ 
 
 jobs:
-  build:
+    prod-env:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
+ 
 
-    strategy:
-      matrix:
-        node-version: [19.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-#    - run: npm test:staging
-    - name: SSH Remote Commands
-      uses: appleboy/ssh-action@v0.1.6
-      with:
-        key: ${{secrets.EC2_SSH_KEY}}
-        host: ${{secrets.EC2_IP}}
-        username: ${{secrets.EC2_USER}}
-#        port: ${{secrets.PORT}}
-#         pm2 delete all
-    - run: sudo su -
-#    - run: git clone  https://github.com/krohith123/nodejs-on-ec2.git
-#    - run: cd /nodejs-on-ec2/
-#    - run: git pull
-    - run: npm install
-    - run: npm update
-    - run: sudo npm install pm2 -g
-#    - run: npm run
-#    - run: npm install pm2 -g
-#    - run: npm start
-    - run: git pull
-#    - run: pm2 start npm -- start
-    - run: pm2 start index.js --name=king
-    
+        steps:
+        - name: Deploying in "test-env"
+          uses: appleboy/ssh-action@master
+          with:
+            host: 3.108.215.167
+            username: root
+            key: ${{ secrets.EC2_SSH_KEY }}
+            port: 22
+            script: |                 
+                cd 
+                /root/nodejs-on-ec2
+                git pull origin master
+                npm install
+                npm run build
+                pm2 restart 0
+                exit
